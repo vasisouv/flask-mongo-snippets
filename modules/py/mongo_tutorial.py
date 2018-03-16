@@ -25,7 +25,7 @@ def find_restaurant_5_star_reviews(restaurant_id):
 
 
 def find_reviews_that_contain_a_word(word):
-    return db['reviews'].find({'text':{'$regex':'^'+word}})
+    return db['reviews'].find({'text': {'$regex': '.*' + word + '.*'}})
 
 
 if __name__ == '__main__':
@@ -65,7 +65,7 @@ if __name__ == '__main__':
         }
         insert_to_db(json_obj, 'restaurants_coordinates')
 
-    word_specific_reviews = find_reviews_that_contain_a_word('good')
+    word_specific_reviews = find_reviews_that_contain_a_word('cops')
     print("Reviews that contain a word")
     for review in word_specific_reviews:
         print(review)
