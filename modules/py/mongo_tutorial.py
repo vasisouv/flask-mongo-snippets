@@ -7,8 +7,10 @@ db = client['yelp']
 def insert_to_db(json_obj, collection_name):
     db[collection_name].insert(json_obj)
 
+
 def find_all_restaurants():
     return db['restaurants'].find({})
+
 
 def find_restaurants_by_neighborhood(neighborhood):
     return db['restaurants'].find({'neighborhood': neighborhood})
@@ -37,9 +39,9 @@ if __name__ == '__main__':
     all_restaurants = find_all_restaurants()
     for restaurant in all_restaurants:
         json_obj = {
-            'name' : restaurant['name'],
-            'business_id' : restaurant['business_id'],
-            'longitude' : restaurant['longitude'],
-            'latitude' : restaurant['latitude']
+            'name': restaurant['name'],
+            'business_id': restaurant['business_id'],
+            'longitude': restaurant['longitude'],
+            'latitude': restaurant['latitude']
         }
         insert_to_db(json_obj, 'restaurants_coordinates')
