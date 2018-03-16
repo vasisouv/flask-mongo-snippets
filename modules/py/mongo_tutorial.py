@@ -49,7 +49,8 @@ if __name__ == '__main__':
     for review in reviews:
         print(review)
 
-    ### Find the coordinates for each restaurant and save them to an external collection
+    # Find the coordinates for each restaurant and
+    # save them to an external collection
     all_restaurants = find_all_restaurants()
     for restaurant in all_restaurants:
         json_obj = {
