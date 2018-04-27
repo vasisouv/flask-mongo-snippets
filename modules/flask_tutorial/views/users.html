@@ -43,8 +43,7 @@
 </nav>
 
 <!-- Page Content -->
-<div class="container">
-
+<div class="mb-3 container">
     <!-- Page Heading -->
     <h1 class="my-4">5 Random customer reviews
     </h1>
@@ -62,29 +61,41 @@
                     <small class="text-muted">Posted at {{ review['date'] }}</small>
                     <p>
                         {% for star in range(0,review['stars']) %}
-                            <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                         {% endfor %}
                         {% for star in range(0,5-review['stars']) %}
-                            <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
                         {% endfor %}
                     </p>
-
+                    <p class="mt-1">
+                        <span title="funny">
+                            <i class="far fa-smile"></i> {{ review['funny'] }}
+                        </span>
+                        <span class="ml-1" title="cool">
+                            <i class="far fa-thumbs-up"></i> {{ review ['cool'] }}
+                        </span>
+                        <span class="ml-1" title="useful">
+                             <i class="far fa-lightbulb"></i> {{ review ['useful'] }}
+                        </span>
+                    </p>
                 </div>
             </div>
-
         </div>
-
         {% endfor %}
-
     </div>
-
 </div>
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Web Information Mining & Retrieval @ AUTh CSD</p>
+    </div>
+    <!-- /.container -->
+</footer>
 
 
 <!-- Bootstrap core JavaScript -->
 <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ url_for('static', filename='vendor/bootstrap/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ url_for('static', filename='vendor/leaflet/leaflet.js') }}"></script>
 
 </body>
 

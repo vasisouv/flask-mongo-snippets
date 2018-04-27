@@ -1,32 +1,56 @@
+/**
+ * Demo Styles
+ */
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 body {
-  padding-top: 54px;
+    position: relative;
+    margin: 0;
+    padding-top: 54px;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 @media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  }
+    body {
+        padding-top: 56px;
+    }
 }
 
 footer {
     position: absolute;
+    right: 0;
     bottom: 0;
-    width: 100%;
+    left: 0;
 }
 
 .portfolio-item {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .pagination {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
-.restaurants-home{
-    text-align:center;
+
+.restaurants-home {
+    text-align: center;
 }
-#restaurants-map{
-    height:500px;
+
+#restaurants-map {
+    height: 500px;
 }
-.review{
+
+.review {
     text-align: justify;
 }
