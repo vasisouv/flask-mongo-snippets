@@ -1,0 +1,32 @@
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.pagination {
+  margin-bottom: 30px;
+}
+.restaurants-home{
+    text-align:center;
+}
+#restaurants-map{
+    height:500px;
+}
+.review{
+    text-align: justify;
+}

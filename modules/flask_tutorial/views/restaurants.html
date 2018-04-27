@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Yelp datamining tutorial</title>
+
+    <!--  CSS -->
+    <link href="{{ url_for('static', filename='vendor/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/leaflet/leaflet.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='vendor/leaflet/leaflet.js') }}"></script>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">Yelp datamining tutorial</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/restaurants">Restaurants</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users">Users</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Page Heading -->
+    <h1 class="my-4">Top 10 Las Vegas restaurants
+        <small>by reviews count</small>
+    </h1>
+    <div class="row">
+        <div class="col-md-5 order-md-2 mb-5">
+            <ul class="list-group mb-3">
+                {% for restaurant in top_10_restaurants %}
+
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                        <h6 class="my-0">{{ restaurant['name'] }}</h6>
+                    </div>
+                    <span class="text-muted">{{ restaurant['review_count'] }} ({{ restaurant['stars'] }}) </span>
+                </li>
+                {% endfor %}
+
+            </ul>
+        </div>
+        <div class="col-md-7">
+            <div id="restaurants-map"></div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Web Information Mining & Retrieval @ AUTh CSD</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/leaflet/leaflet.js') }}"></script>
+<script>
+
+    const top_10_restaurants = {{top_10_restaurants | tojson}}
+    console.log(top_10_restaurants);
+
+    let map = L.map('restaurants-map').setView([36.114647, 	-115.172813], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+    for (let restaurant of top_10_restaurants){
+        L.marker([restaurant.latitude, restaurant.longitude]).addTo(map)
+        .bindPopup(restaurant.name)
+    }
+
+</script>
+
+</body>
+
+</html>
