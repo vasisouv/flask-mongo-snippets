@@ -1,4 +1,4 @@
-from flask_restful import Resource, request, reqparse
+from flask_restful import Resource
 from modules.flaskAPI_tutorial.backend import db
 
 

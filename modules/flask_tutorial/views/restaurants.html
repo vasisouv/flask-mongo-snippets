@@ -12,9 +12,8 @@
 
     <!--  CSS -->
     <link href="{{ url_for('static', filename='vendor/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='vendor/leaflet/leaflet.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-    <script src="{{ url_for('static', filename='vendor/leaflet/leaflet.js') }}"></script>
 
 </head>
 
@@ -90,10 +89,12 @@
     let map = L.map('restaurants-map').setView([36.114647, 	-115.172813], 13);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+    L.marker([-88,65]).addTo(map);
     for (let restaurant of top_10_restaurants){
         L.marker([restaurant.latitude, restaurant.longitude]).addTo(map)
         .bindPopup(restaurant.name)
     }
+
 
 </script>
 
