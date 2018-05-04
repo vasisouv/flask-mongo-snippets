@@ -10,7 +10,6 @@ class PMSController(Resource):
         args = parser.parse_args()
 
         response = {
-            'mood': 'https://imgur.com/a/e1wB10E',
             'classroom': 'Classroom ' + str(args['classroom'])
         }
 

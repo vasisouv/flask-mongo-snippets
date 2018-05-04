@@ -12,7 +12,7 @@ api.add_resource(PMSController, "/api/pms", endpoint="pms")
 
 if __name__ == "__main__":
     # public
-    app.run(debug=True, host='0.0.0.0', port=5110)
+    # app.run(debug=True, host='0.0.0.0', port=5110)
 
     # localhost
-    # app.run(debug=True, host='127.0.0.1', port=5110)
+    app.run(debug=True, host='127.0.0.1', port=5110)
