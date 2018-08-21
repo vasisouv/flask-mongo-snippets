@@ -16,4 +16,4 @@ Example requests
 * `GET 127.0.0.1:5110/api/restaurants?area=brooklyn` - Returns all restaurants in brooklyn
 * `GET 127.0.0.1:5110/api/restaurants?area=brooklyn&min_rating=1`- Returns all restaurants in brooklyn with a
 minimum rating of 1
-* `GET 127.0.0.1:5110/api/restaurants?min_rating=-10` - 400 BAD REQUEST {"Error": "min_rating cannot be a negative value"
+* `GET 127.0.0.1:5110/api/restaurants?min_rating=-10` - 400 BAD REQUEST {"Error": "min_rating cannot be a negative value"}
