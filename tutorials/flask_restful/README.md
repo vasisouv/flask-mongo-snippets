@@ -2,7 +2,7 @@
 
 1) run `api.py`
 2) server should be running at localhost (`127.0.0.1:5110`), config can be changed from api.py main
-3) perform http request at `127.0.0.1:5110/api/restaurants`
+3) perform http GET requests at `127.0.0.1:5110/api/restaurants`
 
 The restaurants endpoint includes 2 non-required parameters
 
