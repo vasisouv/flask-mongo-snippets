@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from modules.flask_tutorial.backend import db
+from tutorials.demo_yelp_app.backend import db
 
 app = Flask(__name__, template_folder='views')
 

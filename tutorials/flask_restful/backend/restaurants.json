@@ -1,0 +1,20 @@
+[
+  {
+    "restaurant_name": "Seafood Restaurant",
+    "average_rating": 4.33,
+    "reviews_count": 543,
+    "area": "Brooklyn"
+  },
+  {
+    "restaurant_name": "Something something Restaurant",
+    "average_rating": 3.75,
+    "reviews_count": 143,
+    "area": "Manhattan"
+  },
+  {
+    "restaurant_name": "Something something else Restaurant",
+    "average_rating": 1.45,
+    "reviews_count": 247,
+    "area": "Manhattan"
+  }
+]
