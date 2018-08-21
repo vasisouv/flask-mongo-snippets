@@ -6,8 +6,8 @@
 
 The restaurants endpoint includes 2 non-required parameters
 
-* `area` - the area of the restaurant (str)
-* `min_rating` - the minimum average rating of the restaurant. If the `min_rating` parameter is negative,
+* `area` (str) - the area of the restaurant (str)
+* `min_rating` (float) - the minimum average rating of the restaurant. If the `min_rating` parameter is negative,
  a `400 - BAD REQUEST` error code is returned alongside a message. 
 
 Example requests

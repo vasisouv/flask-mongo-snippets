@@ -13,7 +13,7 @@ parser = reqparse.RequestParser()
 class RestaurantsController(Resource):
     def get(self):
         parser.add_argument('area', type=str, required=False, help='Error when parsing area')
-        parser.add_argument('min_rating', type=int, required=False, help='Error when parsing min rating')
+        parser.add_argument('min_rating', type=float, required=False, help='Error when parsing min rating')
 
         args = parser.parse_args()
         area = args['area']
