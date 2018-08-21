@@ -1,4 +1,4 @@
-# yelp-datamining-tutorial
+# yelp-flask-mongo-boilerplates
 
 This repo contains tutorials and snippets for:
   * [MongoDB](https://www.mongodb.com/download-center?jmp=nav)
