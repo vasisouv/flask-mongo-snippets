@@ -36,6 +36,7 @@ class RestaurantsController(Resource):
     def __get_all_restaurants__():
         with open(script_dir + '/restaurants.json', 'r', encoding='utf-8') as f:
             restaurants = json.load(f)
+        f.close()
         return restaurants
 
     @staticmethod
