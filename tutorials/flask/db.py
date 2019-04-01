@@ -7,4 +7,4 @@ class Db:
         self.db = client['todo-db']
 
     def find_all(self, collection_name: str):
-        return self.db[collection_name].find({}, {'_id': False})
+        return list(self.db[collection_name].find({}, {'_id': False}))
