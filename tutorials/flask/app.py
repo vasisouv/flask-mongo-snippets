@@ -1,7 +1,6 @@
-from bson import json_util
 from flask import Flask, render_template
+
 from tutorials.flask.db import Db
-import json
 
 app = Flask(__name__, template_folder='views')
 db = Db()
