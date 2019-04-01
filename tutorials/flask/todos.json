@@ -1,0 +1,16 @@
+[
+  {
+    "description": "Clean the house",
+    "notes": "the balcony is clean already"
+  },
+  {
+    "description": "Buy groceries"
+  },
+  {
+    "description": "Take the dog for a walk"
+  },
+  {
+    "description": "Pay bills",
+    "notes": "pay electricity, water and heating"
+  }
+]
