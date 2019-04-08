@@ -6,7 +6,7 @@ app = Flask(__name__, template_folder='views')
 db = Db()
 
 
-@app.route("/", methods=['GET'])
+@app.route("/")
 def home():
     todos = db.find_all('todos')
     return render_template('home.html', todos=list(todos))

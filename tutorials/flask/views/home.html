@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Flask Tutorial</title>
-
     <!-- Include static css -->
     <link href="{{ url_for('static', filename='normalize.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='skeleton.css') }}" rel="stylesheet">
@@ -14,22 +14,32 @@
         <tr>
             <th>Description</th>
             <th>Extra notes</th>
+            <th>Importance</th>
         </tr>
         {% for todo in todos %}
-        <tr>
-            <td> {{ todo.description }} </td>
-            {% if todo.notes %}
-            <td> {{ todo.notes }}</td>
-            {% else %}
-            <td> - </td>
-            {% endif %}
-        </tr>
+            <tr>
+                <td> {{ todo.description }} </td>
+                {% if todo.notes %}
+                    <td> {{ todo.notes }}</td>
+                {% else %}
+                    <td> -</td>
+                {% endif %}
+                <td> {{ todo.importance }} </td>
+            </tr>
         {% endfor %}
     </table>
+    <canvas id="myChart"></canvas>
 </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
 <script>
-    let todos = {{ todos | tojson }}
+  let todos = {{ todos | tojson }};
+  if (todos) {
     console.log(todos)
+    setupChart(todos)
+  }
+
+
 </script>
 </html>

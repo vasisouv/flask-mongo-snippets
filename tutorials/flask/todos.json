@@ -1,16 +1,34 @@
 [
   {
     "description": "Clean the house",
-    "notes": "the balcony is clean already"
+    "notes": "the balcony is clean already",
+    "importance": 4
   },
   {
-    "description": "Buy groceries"
+    "description": "Buy groceries",
+    "importance": 3
   },
   {
-    "description": "Take the dog for a walk"
+    "description": "Take the dog for a walk",
+    "importance": 5
   },
   {
     "description": "Pay bills",
-    "notes": "pay electricity, water and heating"
+    "notes": "pay electricity, water and heating",
+    "importance": 5
+  },
+  {
+    "description": "Visit George",
+    "notes": "he is in the hospital",
+    "importance": 4
+  },
+  {
+    "description": "Buy new headset",
+    "importance": 1
+  },
+  {
+    "description": "Buy a new wardrobe",
+    "notes": "current one is almost full",
+    "importance": 2
   }
 ]
